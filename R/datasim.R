@@ -12,8 +12,10 @@
 #' \code{\link{topdown}} and \code{\link{predict.topdown}}.
 #'
 #' @format A data frame with 560 observations, 13 covariates and one hierarchical outcome variable
-#' @source The data set (as many other artificial data sets with hierarchically structured outcome)
-#' is available from a GitHub repository (file name: \code{HA_02_FD_b_train.arff}, second commit, date of commit: 13 Jul 2019). Link: \url{https://github.com/jona2510/ADforHC/}
+#' @source 
+#' The data set (as many other artificial data sets with hierarchically structured outcome)
+#' is available from a GitHub repository (file name: \code{HA_02_FD_b_train.arff}, second commit, date of commit: 13 Jul 2019).
+#' Link: \url{https://github.com/jona2510/ADforHC/}
 #'
 #' @examples
 #' # Load data:

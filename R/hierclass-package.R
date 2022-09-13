@@ -1,4 +1,4 @@
-#' Hierarchical Classification and Hierarchical Performance Metrics
+#' Hierarchical Classification and Performance Metrics for Hierarchical Classification
 #'
 #' Single-label hierarchical outcomes representable by category trees are
 #' considered. An example of such an outcome would be species categorization,

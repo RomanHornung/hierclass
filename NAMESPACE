@@ -2,6 +2,7 @@
 
 S3method(predict,topdown)
 S3method(print,topdown)
+export(LearnerClassiftopdown)
 export(hierfbeta)
 export(hierpr)
 export(hierre)

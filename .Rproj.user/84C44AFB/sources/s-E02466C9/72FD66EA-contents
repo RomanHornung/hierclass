@@ -1,0 +1,43 @@
+#' Hierarchical Classification and Hierarchical Performance Metrics
+#'
+#' Single-label hierarchical outcomes representable by category trees are
+#' considered. An example of such an outcome would be species categorization,
+#' where the kingdom would be broadest category, followed by phylum, class,
+#' order, family, genus, and species. Humans would be categorized as follows:
+#' 1) animalia (kingdom), 2) chordata (phylum), 3) mammalia (class),
+#' 4) primates (order), 5) hominidae (family), 6) homo (genus), 7) sapien
+#' (species).\cr
+#' Currently, the only implemented classification approach is top-down
+#' classification with local classifiers per parent node, where random forests
+#' are used as local classifiers. This approach can be applied via the function
+#' \code{\link{topdown}} (see \code{\link{predict.topdown}} for prediction).\cr
+#' There are a number of performance and loss measures implemented:
+#' the H-loss measure (\code{\link{hloss}}) (Cesa-Bianchi et al., 2006), the shortest path loss measure
+#' (\code{\link{spath}}) (Wang et al., 1999, Blockeel et al., 2002), the hierarchical F-score (\code{\link{hierfbeta}}),
+#' the hierarchical recall (\code{\link{hierre}}), and the hierarchical precision
+#' (\code{\link{hierpr}}) (Kiritchenko et al., 2005).
+#'
+#' @references
+#' \itemize{
+#'   \item Blockeel, H., Bruynooghe, M., Džeroski, S., Ramon, J., Struyf, J.
+#'   (2002). Hierarchical multi-classification. In: Workshop Notes of the
+#'   KDD’02 Workshop on Multi-Relational Data Mining, Detroit, pp 21-35,
+#'   Edmonton, Canada.
+#'   \item Cesa-Bianchi, N., Gentile, C., Zaniboni, L. (2006).
+#'   Incremental algorithms for hierarchical classification.
+#'   Journal of Machine Learning Research 7:31–54.
+#'   \item Costa, E. P., Lorena, A. C., Carvalho, A. C. P. L. F., Freitas, A. A. (2007) A review of performance evaluation measures for hierarchical classifiers. In: C. Drummond, W. Elazmeh, N. Japkowicz, S.A. Macskassy (Ed.), Evaluation Methods for Machine Learning II: papers from the AAAI-2007 Workshop, AAAI Technical Report WS-07-05. AAAI.
+#'   \item Kiritchenko, S., Matwin, S., Famili, A. F. (2005). Functional annotation of genes using hierarchical text categorization. In: Proceedings of the BioLINK SIG: Linking Literature, Information and Knowledge for Biology, Detroit, Michigan, USA.
+#'   \item Kosmopoulos, A., Partalas, I., Gaussier, E., Paliouras, G., Androutsopoulos, I. (2015). Evaluation measures for hierarchical classification: A unified view and novel approaches. Data Mining and Knowledge Discovery 29(3):820–865, <\doi{10.1007/s10618-014-0382-x}>.
+#'   \item Naik, A., Rangwala, H. (2018). Large scale hierarchical classification: State of the art. Springer, Berlin, <\doi{10.1007/978-3-030-01620-3}>.
+#'   \item Serrano-Pérez, J., Sucar, L. (2021). Artificial datasets for hierarchical classification. Expert Systems With Applications, 182, 115218.
+#'   \item Wang, K., Zhou, S., Liew, S. C. (1999). Building hierarchical
+#'   classifiers using class proximity. In: Atkinson, M. P. et al. (ed)
+#'   Proceedings of the 25th conference on very large data bases, Detroit,
+#'   pp 363–374, Edinburgh, UK. Morgan Kaufmann Publishers, San Francisco,
+#'   US.
+#'   }
+#'
+#' @name hierclass-package
+#' @aliases hierclass
+NULL

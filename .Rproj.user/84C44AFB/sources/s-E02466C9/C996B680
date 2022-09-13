@@ -1,0 +1,26 @@
+{
+    "id": "C996B680",
+    "path": "Z:/Projects/DESTATIS/PredErrorComplex/HierClassImpl/Package/hierclass/R/topdown.R",
+    "project_path": "R/topdown.R",
+    "type": "r_source",
+    "hash": "1289526618",
+    "contents": "",
+    "dirty": false,
+    "created": 1662469061578.0,
+    "source_on_save": false,
+    "relative_order": 2,
+    "properties": {
+        "source_window_id": "",
+        "Source": "Source",
+        "cursorPosition": "70,56",
+        "scrollLine": "61"
+    },
+    "folds": "",
+    "lastKnownWriteTime": 1663056636,
+    "encoding": "UTF-8",
+    "collab_server": "",
+    "source_window": "",
+    "last_content_update": 1663056634678,
+    "read_only": false,
+    "read_only_alternatives": []
+}

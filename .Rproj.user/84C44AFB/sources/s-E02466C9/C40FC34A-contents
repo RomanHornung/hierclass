@@ -1,0 +1,41 @@
+
+## Load package:
+
+library("hierclass")
+
+
+## Load the example data set 'datasim':
+
+data(datasim)
+
+
+## Set seed to make results reproducible:
+
+set.seed(1234)
+
+
+## Split data set into training and test data:
+
+trainind <- sample(1:nrow(datasim), size=round((3/4)*nrow(datasim)))
+datatrain <- datasim[trainind,]
+datatest <- datasim[-trainind,]
+
+
+## Construct a top-down hierarchical prediction rule using the training data:
+
+object <- topdown(ydepvar ~ ., data=datatrain, num.trees=50)
+# NOTE: In practice 'num.trees' should in general be larger
+# to achieve better performance (default is 500).
+# We use 50 trees here only for computational efficiency of
+# the example.
+
+
+## Predict the classes of observations in the test data (without
+## early stopping because 'confid=1' by default):
+
+preds <- predict(object, data=datatest)
+
+
+## Compare the first predictions with the true labels:
+
+head(data.frame(preds=preds, truth=datatest$ydepvar))

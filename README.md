@@ -6,3 +6,19 @@ hierarchical classification using random forests as local classifiers is
 implemented.
 The performance/loss measures implemented include the hierarchical F-score,
 the (weighted) shortest path distance, and the H-loss.
+
+
+
+```r
+library(mlr3)
+library(hierclass)
+
+lrn()
+msr()
+```
+
+
+```r
+# Get help on a metric with
+?mlr_measures_classif.hierfbeta
+```

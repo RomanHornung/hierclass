@@ -1,8 +1,10 @@
-#' The hierarchical precision defined by Kiritchenko et al. (2005). Takes the ancestors of the true and
-#' predicted classes into account, but has the disadvantage that it overpenalizes errors in nodes with many
+#' @title Hierarchical precision
+#' 
+#' @description
+#' Hierarchical precision defined by Kiritchenko et al. (2005). 
+#' Takes the ancestors of the true and predicted classes into account, but has the disadvantage that it overpenalizes errors in nodes with many
 #' ancestors (Kosmopoulos et al., 2015).
 #'
-#' @title Hierarchical precision
 #' @param truth True (observed) labels. Must have the same length as \code{response}. Can be factor (recommended) or character.
 #' These need to be structured in the same way as required for \code{\link{topdown}}. See the 'Details' section of \code{\link{topdown}}
 #' for details.

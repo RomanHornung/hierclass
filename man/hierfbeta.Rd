@@ -27,7 +27,7 @@ the same weight to all observations and all classes, respectively. Default is "m
 The value of the hierarchical F-score.
 }
 \description{
-The hierarchical F-score defined by Kiritchenko et al. (2005). This is a (weighted) geometric
+Hierarchical F-score defined by Kiritchenko et al. (2005). This is a (weighted) geometric
 mean of the hierarchical recall and the hierarchical precision. Takes the ancestors of the true and
 predicted classes into account, but has the disadvantage that it overpenalizes errors in nodes with many
 ancestors (Kosmopoulos et al., 2015).

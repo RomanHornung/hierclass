@@ -11,17 +11,34 @@ Description: Classification of hierarchically structured outcomes and
   The performance/loss measures implemented include the hierarchical F-score,
   the (weighted) shortest path distance, and the H-loss.
 License: GPL-2
-Imports: mlr3, mlr3misc, mlr3learners, parallel, nnet
 Encoding: UTF-8
 RoxygenNote: 7.2.1
 Depends: 
-    R (>= 2.10),
-    data.table,
-    checkmate
-Suggests: 
-    testthat (>= 3.0.0),
-    data.table,
+    R (>= 3.1.0)
+Imports:
+    checkmate (>= 2.0.0),
+    data.table (>= 1.14.2),
     mlr3,
     mlr3misc,
+    mlr3learners,
+    nnet,
     paradox
+Suggests: 
+    testthat (>= 3.0.0)
 Config/testthat/edition: 3
+Collate: 
+    'datasim.R'
+    'get_hlevels.R'
+    'hierclass-package.R'
+    'hierfbeta.R'
+    'hierpr.R'
+    'hierre.R'
+    'hloss.R'
+    'mlr3_learner_classif_topdown.R'
+    'spath.R'
+    'mlr3_measures_hierclass.R'
+    'parse.formula.R'
+    'predict.topdown.R'
+    'print.R'
+    'topdown.R'
+    'zzz.R'

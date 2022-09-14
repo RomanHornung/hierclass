@@ -1,4 +1,6 @@
 #' @examples
+#' library("mlr3")
+#' library("hierclass")
 #' learner = mlr3::lrn("<%= id %>")
 #' print(learner)
 #'

@@ -1,9 +1,10 @@
-#' The hierarchical F-score defined by Kiritchenko et al. (2005). This is a (weighted) geometric
+#' @title Hierarchical F-score
+#' 
+#' @description Hierarchical F-score defined by Kiritchenko et al. (2005). This is a (weighted) geometric
 #' mean of the hierarchical recall and the hierarchical precision. Takes the ancestors of the true and
 #' predicted classes into account, but has the disadvantage that it overpenalizes errors in nodes with many
 #' ancestors (Kosmopoulos et al., 2015).
 #'
-#' @title Hierarchical F-score
 #' @param truth True (observed) labels. Must have the same length as \code{response}. Can be factor (recommended) or character.
 #' These need to be structured in the same way as required for \code{\link{topdown}}. See the 'Details' section of \code{\link{topdown}}
 #' for details.

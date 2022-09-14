@@ -76,5 +76,3 @@ LearnerClassiftopdown = R6::R6Class("LearnerClassiftopdown",
     }
   )
 )
-
-mlr_learners$add("classif.topdown", LearnerClassiftopdown)

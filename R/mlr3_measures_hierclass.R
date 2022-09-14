@@ -46,63 +46,47 @@ MeasureClassifHierarchical = R6::R6Class("MeasureClassifHierarchical",
 
 #' @templateVar id hierfbeta
 #' @template measure_hierarchical
-mlr_measures$add(
-    "classif.hierfbeta",
-    MeasureClassifHierarchical$new(
-        fun = hierfbeta,
-        param_set = paradox::ps(
-            beta = paradox::p_int(lower = 0),
-            type = paradox::p_fct(levels = c("micro", "macro"))
-        )
+measure_hierfbeta = MeasureClassifHierarchical$new(
+    fun = hierfbeta,
+    param_set = paradox::ps(
+        beta = paradox::p_int(lower = 0),
+        type = paradox::p_fct(levels = c("micro", "macro"))
     )
 )
 
 #' @templateVar id hierpr
 #' @template measure_hierarchical
-mlr_measures$add(
-    "classif.hierpr",
-    MeasureClassifHierarchical$new(
-        fun = hierpr,
-        param_set = paradox::ps(
-            type = paradox::p_fct(levels = c("micro", "macro"))
-        )
+measure_hierpr = MeasureClassifHierarchical$new(
+    fun = hierpr,
+    param_set = paradox::ps(
+        type = paradox::p_fct(levels = c("micro", "macro"))
     )
 )
 
 #' @templateVar id hierre
 #' @template measure_hierarchical
-mlr_measures$add(
-    "classif.hierre",
-    MeasureClassifHierarchical$new(
-        fun = hierpr,
-        param_set = paradox::ps(
-            type = paradox::p_fct(levels = c("micro", "macro"))
-        )
+measure_hierre = MeasureClassifHierarchical$new(
+    fun = hierpr,
+    param_set = paradox::ps(
+        type = paradox::p_fct(levels = c("micro", "macro"))
     )
 )
 
-
 #' @templateVar id hloss
 #' @template measure_hierarchical
-mlr_measures$add(
-    "classif.hloss",
-    MeasureClassifHierarchical$new(
-        fun = hierpr,
-        param_set = paradox::ps(
-            w0 = paradox::p_dbl(lower = 0, upper = 1)
-        )
+measure_hloss = MeasureClassifHierarchical$new(
+    fun = hierpr,
+    param_set = paradox::ps(
+        w0 = paradox::p_dbl(lower = 0, upper = 1)
     )
 )
 
 #' @templateVar id spath
 #' @template measure_hierarchical
-mlr_measures$add(
-    "classif.spath",
-    MeasureClassifHierarchical$new(
-        fun = spath,
-        param_set = paradox::ps(
-            type = paradox::p_fct(levels = "weighted"),
-            w0 = paradox::p_dbl(lower = 0, upper = 1)
-        )
+measure_spath = MeasureClassifHierarchical$new(
+    fun = spath,
+    param_set = paradox::ps(
+        type = paradox::p_fct(levels = "weighted"),
+        w0 = paradox::p_dbl(lower = 0, upper = 1)
     )
 )

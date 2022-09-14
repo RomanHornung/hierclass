@@ -1,4 +1,8 @@
-#' The H-loss measure defined by Cesa-Bianchi et al. (2006). This measure takes
+#' @title H-loss measure
+#' 
+#' @description 
+#'  H-loss measure defined by Cesa-Bianchi et al. (2006). 
+#' This measure takes
 #' into account that after a hierarchical prediction rule makes its first error
 #' in the top-down prediction process, it is not expected that the remaining predictions
 #' at lower levels of the category tree are correct, which is why only the first
@@ -6,7 +10,6 @@
 #' category tree should be penalized more strongly than errors occurring at the
 #' lower levels. This loss measure particularly rewards early stoppings without
 #' errors. See the 'Details' section for more details.
-#'
 #' We define the weights used in the calculation of the H-loss in such a way
 #' that errors made in the upper levels of the category are penalized more strongly
 #' than in the lower levels. More precisely, the errors are weighted by w0^l,
@@ -17,7 +20,6 @@
 #' the procedure is analogous to that of Cesa-Bianchi et al. (2006) if we
 #' define the weights as the  w0^l divided by their sum over all observations.
 #'
-#' @title H-loss measure
 #' @param truth True (observed) labels. Must have the same length as \code{response}. Can be factor (recommended) or character.
 #' These need to be structured in the same way as required for \code{\link{topdown}}. See the 'Details' section of \code{\link{topdown}}
 #' for details.

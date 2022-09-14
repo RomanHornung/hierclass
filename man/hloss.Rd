@@ -31,7 +31,8 @@ Default is 0.75.}
 The value of the H-loss measure.
 }
 \description{
-The H-loss measure defined by Cesa-Bianchi et al. (2006). This measure takes
+H-loss measure defined by Cesa-Bianchi et al. (2006). 
+This measure takes
 into account that after a hierarchical prediction rule makes its first error
 in the top-down prediction process, it is not expected that the remaining predictions
 at lower levels of the category tree are correct, which is why only the first
@@ -39,8 +40,6 @@ errors made should be penalized. Moreover, errors made in the upper levels of th
 category tree should be penalized more strongly than errors occurring at the
 lower levels. This loss measure particularly rewards early stoppings without
 errors. See the 'Details' section for more details.
-}
-\details{
 We define the weights used in the calculation of the H-loss in such a way
 that errors made in the upper levels of the category are penalized more strongly
 than in the lower levels. More precisely, the errors are weighted by w0^l,

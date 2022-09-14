@@ -1,4 +1,6 @@
-#' The shortest path loss measure. The unweighted shortest path loss measure,
+#' @title Shortest path loss measure
+#' 
+#' @description The shortest path loss measure. The unweighted shortest path loss measure,
 #' introduced by Wang et al. (1999), is simply the distance between the true
 #' and the predicted class in the category tree. The weighted shortest path
 #' loss measure (Blockeel et al., 2002) is the measure by Wang et al. (1999) but with depth-specific
@@ -12,7 +14,6 @@
 #' w0^l, where l is the depth of the edge (starting with 1 for the highest
 #' edges in the category tree) and w0 is the input parameter \code{w0}.
 #'
-#' @title Shortest path loss measure
 #' @param truth True (observed) labels. Must have the same length as \code{response}. Can be factor (recommended) or character.
 #' These need to be structured in the same way as required for \code{\link{topdown}}. See the 'Details' section of \code{\link{topdown}}
 #' for details.

@@ -23,8 +23,8 @@ the same weight to all observations and all classes, respectively. Default is "m
 The value of the hierarchical precision.
 }
 \description{
-The hierarchical precision defined by Kiritchenko et al. (2005). Takes the ancestors of the true and
-predicted classes into account, but has the disadvantage that it overpenalizes errors in nodes with many
+Hierarchical precision defined by Kiritchenko et al. (2005). 
+Takes the ancestors of the true and predicted classes into account, but has the disadvantage that it overpenalizes errors in nodes with many
 ancestors (Kosmopoulos et al., 2015).
 }
 \examples{

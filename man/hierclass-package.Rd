@@ -3,7 +3,7 @@
 \name{hierclass-package}
 \alias{hierclass-package}
 \alias{hierclass}
-\title{Hierarchical Classification and Hierarchical Performance Metrics}
+\title{Hierarchical Classification and Performance Metrics for Hierarchical Classification}
 \description{
 Single-label hierarchical outcomes representable by category trees are
 considered. An example of such an outcome would be species categorization,

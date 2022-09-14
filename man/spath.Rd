@@ -40,8 +40,7 @@ levels of the category tree. While the unweighted version is easier interpretabl
 it has the disadvantage that it does not take into account that
 misclassifications at lower levels of the hierarchy are more forgivable than
 those at upper levels.
-}
-\details{
+
 In the weighted shortest path distance the weight assigned to an edge is
 w0^l, where l is the depth of the edge (starting with 1 for the highest
 edges in the category tree) and w0 is the input parameter \code{w0}.

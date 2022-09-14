@@ -25,3 +25,19 @@ Suggests:
     mlr3misc,
     paradox
 Config/testthat/edition: 3
+Collate: 
+    'datasim.R'
+    'get_hlevels.R'
+    'hierclass-package.R'
+    'hierfbeta.R'
+    'hierpr.R'
+    'hierre.R'
+    'hloss.R'
+    'mlr3_learner_classif_topdown.R'
+    'spath.R'
+    'mlr3_measures_hierclass.R'
+    'parse.formula.R'
+    'predict.topdown.R'
+    'print.R'
+    'topdown.R'
+    'zzz.R'

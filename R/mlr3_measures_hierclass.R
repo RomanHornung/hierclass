@@ -31,7 +31,7 @@ MeasureClassifHierarchical = R6::R6Class("MeasureClassifHierarchical",
                 # minimize during tuning?
                 minimize = TRUE
             )
-            self$fun = assert_function(fun)
+            self$fun = checkmate::assert_function(fun)
             self$param_set = param_set
         }
     ),

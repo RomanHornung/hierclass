@@ -36,6 +36,8 @@ lrn("classif.topdown")
 }
 
 \examples{
+library("mlr3")
+library("hierclass")
 learner = mlr3::lrn("classif.topdown")
 print(learner)
 

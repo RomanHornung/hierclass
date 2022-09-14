@@ -12,6 +12,9 @@ the (weighted) shortest path distance, and the H-loss.
 ```r
 library(mlr3)
 library(hierclass)
+
+lrn()
+msr()
 ```
 
 

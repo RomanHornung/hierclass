@@ -1,5 +1,5 @@
 #' @title Hierarchical Top-down Classification Learner
-#' @author RomanHornung
+#' @author Florian Pfisterer
 #' @name mlr_learners_classif.topdown
 #'
 #' @description
@@ -12,7 +12,9 @@
 # `r format_bib(FIXME: ONE OR MORE REFERENCES FROM bibentries.R)`
 #'
 #' @template seealso_learner
+#' @seealso \code{\link{topdown}}, \code{\link{predict.topdown}}
 #' @template example
+#'
 #' @export
 LearnerClassiftopdown = R6::R6Class("LearnerClassiftopdown",
   inherit = mlr3::LearnerClassif,
@@ -51,7 +53,7 @@ LearnerClassiftopdown = R6::R6Class("LearnerClassiftopdown",
       # AT LEAST "data" AND "formula" ARE REQUIRED
       formula = task$formula()
       data = task$data()
-	
+
       mlr3misc::invoke(
         hierclass::topdown,
         formula = formula,

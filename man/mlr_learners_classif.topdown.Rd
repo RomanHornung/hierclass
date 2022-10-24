@@ -58,9 +58,11 @@ learner$param_set$ids()
    * \CRANpkg{mlr3cluster} for unsupervised clustering.
 * \CRANpkg{mlr3tuning} for tuning of hyperparameters, \CRANpkg{mlr3tuningspaces}
   for established default tuning spaces.
+
+\code{\link{topdown}}, \code{\link{predict.topdown}}
 }
 \author{
-RomanHornung
+Florian Pfisterer
 }
 \concept{Learner}
 \section{Super classes}{

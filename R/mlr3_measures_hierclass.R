@@ -1,10 +1,69 @@
-
+#' @title Hierarchical Performance/Loss Measures
+#' @author Florian Pfisterer
+#' @name mlr_measures_hierclass
+#'
 #' @include hierfbeta.R
 #' @include hierre.R
 #' @include hierpr.R
 #' @include hloss.R
 #' @include spath.R
-
+#'
+#' @description
+#' To Do Florian?
+#'
+#' @seealso \code{\link{hierre}}, \code{\link{hierpr}}, \code{\link{hierfbeta}}, \code{\link{hloss}}, \code{\link{spath}}
+#' @export
+#' @examples
+#' # Load the required packages:
+#' library("mlr3")
+#' library("hierclass")
+#'
+#' # Set seed for reproducibility:
+#' set.seed(1234)
+#'
+#' # Load example dataset:
+#' data(datasim)
+#'
+#' # Define the task for the top-down classification rule:
+#' task = as_task_classif(ydepvar ~ ., data = datasim)
+#'
+#' # Initialize the learner for the top-down classification rule:
+#' learner = lrn("classif.topdown")
+#'
+#' # Train a model of this learner for a subset of the task:
+#' learner$train(task, row_ids = 1:300)
+#' learner$model
+#'
+#' # Obtain predictions for the remaining observations:
+#' predictions = learner$predict(task, row_ids = 301:560)
+#' predictions
+#'
+#' # Measure the performance according to different performance/loss metrics:
+#'
+#' # Hierarchical F-score:
+#' measure = msr("classif.hierfbeta")
+#' predictions$score(measure)
+#'
+#' # Hierarchical precision:
+#' measure = msr("classif.hierpr")
+#' predictions$score(measure)
+#'
+#' # Hierarchical recall:
+#' measure = msr("classif.hierre")
+#' predictions$score(measure)
+#'
+#' # H-loss measure:
+#' measure = msr("classif.hloss")
+#' predictions$score(measure)
+#'
+#' # Shortest path loss measure:
+#' measure = msr("classif.spath")
+#' predictions$score(measure)
+#'
+#' # Classification accuracy (not a hierarchical performance/loss measure):
+#' measure = msr("classif.acc")
+#' predictions$score(measure)
+#' @export
 # Abstract Base Class for Hierarchical Classification Measures
 MeasureClassifHierarchical = R6::R6Class("MeasureClassifHierarchical",
     inherit = mlr3::MeasureClassif,
@@ -38,7 +97,7 @@ MeasureClassifHierarchical = R6::R6Class("MeasureClassifHierarchical",
     private = list(
         .score = function(prediction, ...) {
             mlr3misc::invoke(self$fun, .args = self$param_set$get_values(),
-                truth = truth, response = prediction$response
+                truth = prediction$truth, response = prediction$response
             )
         }
     )
@@ -66,7 +125,7 @@ measure_hierpr = MeasureClassifHierarchical$new(
 #' @templateVar id hierre
 #' @template measure_hierarchical
 measure_hierre = MeasureClassifHierarchical$new(
-    fun = hierpr,
+    fun = hierre,
     param_set = paradox::ps(
         type = paradox::p_fct(levels = c("micro", "macro"))
     )
@@ -75,7 +134,7 @@ measure_hierre = MeasureClassifHierarchical$new(
 #' @templateVar id hloss
 #' @template measure_hierarchical
 measure_hloss = MeasureClassifHierarchical$new(
-    fun = hierpr,
+    fun = hloss,
     param_set = paradox::ps(
         w0 = paradox::p_dbl(lower = 0, upper = 1)
     )

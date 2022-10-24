@@ -15,8 +15,15 @@
 #' the H-loss measure (\code{\link{hloss}}) (Cesa-Bianchi et al., 2006), the shortest path loss measure
 #' (\code{\link{spath}}) (Wang et al., 1999, Blockeel et al., 2002), the hierarchical F-score (\code{\link{hierfbeta}}),
 #' the hierarchical recall (\code{\link{hierre}}), and the hierarchical precision
-#' (\code{\link{hierpr}}) (Kiritchenko et al., 2005).
+#' (\code{\link{hierpr}}) (Kiritchenko et al., 2005).\cr
+#' The classification approach and the hierarchical performance and loss measures can be used
+#' in conjunction with the R package 'mlr3'. By loading the 'mlr3' package together
+#' with the 'hierclass' package, the top-down classification approach is available
+#' as an mlr3 learner and the hierarchical performance and loss measures are
+#' available as mlr3 measures. See \code{\link{mlr_learners_classif.topdown}} and
+#' \code{\link{mlr_measures_hierclass}} for more details and examples.
 #'
+#' @author Roman Hornung, Florian Pfisterer
 #' @references
 #' \itemize{
 #'   \item Blockeel, H., Bruynooghe, M., Džeroski, S., Ramon, J., Struyf, J.

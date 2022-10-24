@@ -57,7 +57,7 @@ random, where each sub-class would have an expected predicted probability of 1/L
 where L is the number of sub-classes, \code{confid} would be the probability that
 the maximum predicted probability exceeds the threshold t_confid. Thus, the smaller
 \code{confid} is, the larger t_confid becomes and the earlier the prediction process tends
-to stop. Thus smaller \code{confid} values correspond to more coarse predictions with less
+to stop. Thus, smaller \code{confid} values correspond to more coarse predictions with less
 depth, which, however, tend to be more reliable than finer predictions.\cr
 In cases in which the maximum probability would be smaller than t_confid already at the highest
 node, we would not obtain a prediction at all, which we want to avoid. Therefore,

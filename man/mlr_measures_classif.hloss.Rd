@@ -12,7 +12,7 @@ An object of class \code{MeasureClassifHierarchical} (inherits from \code{Measur
 measure_hloss
 }
 \description{
-H-loss measure defined by Cesa-Bianchi et al. (2006). 
+H-loss measure defined by Cesa-Bianchi et al. (2006).
 This measure takes
 into account that after a hierarchical prediction rule makes its first error
 in the top-down prediction process, it is not expected that the remaining predictions
@@ -21,15 +21,6 @@ errors made should be penalized. Moreover, errors made in the upper levels of th
 category tree should be penalized more strongly than errors occurring at the
 lower levels. This loss measure particularly rewards early stoppings without
 errors. See the 'Details' section for more details.
-We define the weights used in the calculation of the H-loss in such a way
-that errors made in the upper levels of the category are penalized more strongly
-than in the lower levels. More precisely, the errors are weighted by w0^l,
-where l is the level the error occurred (starting with 1 for the highest
-levels in the category tree) and w0 is the input parameter \code{w0}.\cr\cr
-A more technical detail: In contrast to Cesa-Bianchi et al. (2006), we do not calculate the sum of
-the errors occurred (error (yes) = 1 vs. error (no) = 0), but the mean. But
-the procedure is analogous to that of Cesa-Bianchi et al. (2006) if we
-define the weights as the  w0^l divided by their sum over all observations.
 }
 \note{
 The score function calls \code{\link[=hloss]{hloss()}} from package \CRANpkg{hierclass}.

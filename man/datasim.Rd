@@ -40,3 +40,6 @@ head(datasim)
   \item Serrano-Pérez, J., Sucar, L. (2021). Artificial datasets for hierarchical classification. Expert Systems With Applications, 182, 115218.
   }
 }
+\author{
+Roman Hornung
+}

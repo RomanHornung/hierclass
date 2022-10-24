@@ -21,13 +21,13 @@ topdown(
 \item{data}{Training data of class \code{data.frame}. See the 'Details' section for
 the structure required for the outcome variable.}
 
-\item{dependent.variable.name}{Name of outcome variable, needed if no formula given. For survival forests this is the time variable.}
+\item{dependent.variable.name}{Name of outcome variable, needed if no formula given.}
 
 \item{num.trees}{Number of trees used in the random forests. The default is 500.}
 
 \item{mtry}{Number of variables to possibly split at in each node in the random forests. Default is the (rounded down) square root of the number variables.}
 
-\item{sample.fraction}{Fraction of observations to sample. Default is 1 for sampling with replacement and 0.7 for sampling without replacement. For classification, this can be a vector of class-specific values.}
+\item{sample.fraction}{Fraction of observations to sample. Default is 1 for sampling with replacement and 0.667 for sampling without replacement. For classification, this can be a vector of class-specific values.}
 
 \item{maxnthreads}{Should the maximum number of threads available be used (\code{TRUE}) or should
 the default parallelization from the package \code{mlr3} be used (\code{FALSE}).
@@ -66,7 +66,7 @@ genus, and species. Humans would be categorized as follows: 1) animalia (kingdom
 2) chordata (phylum), 3) mammalia (class), 4) primates (order), 5) hominidae (family),
 6) homo (genus), 7) sapien (species). All this information has to be present for each observation
 in the data via a single outcome variable in the \code{data.frame} provided via the
-function \code{data}. The entries of this variable have to be structured in
+function argument \code{data}. The entries of this variable have to be structured in
 a certain form, please see the 'Details' section below for explanation.
 }
 \details{
@@ -78,8 +78,8 @@ species categorization described above. Here, an entry for a human would look
 like this: 'animalia.chordata.mammalia.primates.hominidae.homo.sapien'.
 In the above example, the categorization has depth 7. That is, there are
 seven degrees of fineness (first degree "kingdom", second degree "phylum",
-and so on). But the function can also deal with hierarchical classification
-problems, for which the different branches of the category have different lengths
+and so on). The function can also deal with hierarchical classification
+problems, for which the different branches of the category tree have different lengths
 (or "depths"). For example, for one observation the categorization may have
 depth 7, but for another observation the categorization (from a different branch
 of the category tree) may have only depth 3.\cr

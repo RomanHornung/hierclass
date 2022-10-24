@@ -6,6 +6,5 @@ test_that("learner works", {
     object <- topdown(ydepvar ~ ., data=datatrain, num.trees=50)
     expect_class(object, 'topdown')
 
-    # FIXME: Does not work yet
-    # predict(object, datatest)
+    predict(object, datatest)
 })

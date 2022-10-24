@@ -27,7 +27,7 @@
 #' where L is the number of sub-classes, \code{confid} would be the probability that
 #' the maximum predicted probability exceeds the threshold t_confid. Thus, the smaller
 #' \code{confid} is, the larger t_confid becomes and the earlier the prediction process tends
-#' to stop. Thus smaller \code{confid} values correspond to more coarse predictions with less
+#' to stop. Thus, smaller \code{confid} values correspond to more coarse predictions with less
 #' depth, which, however, tend to be more reliable than finer predictions.\cr
 #' In cases in which the maximum probability would be smaller than t_confid already at the highest
 #' node, we would not obtain a prediction at all, which we want to avoid. Therefore,
@@ -121,6 +121,23 @@ predict.topdown <- function(object, data, confid=1, ...) {
   if(!is.numeric(confid) | confid <= 0 | confid > 1)
     stop("'confid' must be a numeric value in the interval ]0, 1].")
 
+  thresholdmat <- rbind(c(0.995, 0.975, 0.95, 0.85, 0.75, 0.65, 0.55, 0),
+                        c(0.942, 0.871, 0.817, 0.684, 0.592, 0.517, 0.439, 0),
+                        c(0.864, 0.768, 0.707, 0.578, 0.5, 0.438, 0.368, 0),
+                        c(0.788, 0.684, 0.624, 0.505, 0.437, 0.382, 0.32, 0),
+                        c(0.722, 0.616, 0.559, 0.451, 0.39, 0.34, 0.286, 0),
+                        c(0.664, 0.561, 0.507, 0.408, 0.353, 0.308, 0.259, 0),
+                        c(0.615, 0.516, 0.465, 0.374, 0.323, 0.283, 0.238, 0),
+                        c(0.573, 0.477, 0.43, 0.345, 0.299, 0.262, 0.22, 0),
+                        c(0.536, 0.445, 0.401, 0.322, 0.279, 0.244, 0.205, 0),
+                        c(0.503, 0.417, 0.375, 0.301, 0.261, 0.229, 0.193, 0),
+                        c(0.475, 0.392, 0.353, 0.284, 0.246, 0.216, 0.182, 0),
+                        c(0.45, 0.371, 0.333, 0.268, 0.233, 0.204, 0.172, 0),
+                        c(0.427, 0.352, 0.316, 0.254, 0.221, 0.194, 0.164, 0),
+                        c(0.407, 0.335, 0.301, 0.242, 0.21, 0.185, 0.156, 0))
+  colnames(thresholdmat) <- c(0.01, 0.05, 0.1, 0.3, 0.5, 0.7, 0.9, 1)
+  rownames(thresholdmat) <- 2:15
+
   if(!(confid %in% as.numeric(colnames(thresholdmat)))) {
     confidvalues <- as.numeric(colnames(thresholdmat))
     confid <- confidvalues[nnet::which.is.max(1-abs(confidvalues-confid))]
@@ -193,7 +210,8 @@ predict.topdown <- function(object, data, confid=1, ...) {
 
         predprobs <- object$modellist[[predclass]]$preds[i,]
 
-        if(as.numeric(names(thresholds)) <= length(object$modellist[[predclass]]$subclasses))
+        # If there are more than 15 subclasses the prediction process stops:
+        if(length(object$modellist[[predclass]]$subclasses) <= max(as.numeric(names(thresholds))))
           threshold <- thresholds[as.character(length(object$modellist[[predclass]]$subclasses))]
         else
           break

@@ -44,7 +44,7 @@ task = as_task_classif(ydepvar ~ ., data = datasim)
 learner = lrn("classif.topdown")
 ```
 
-### Train and Predict:
+### Train and Predict
 
 ``` r
 # Train a model using the above learner for a subset of the task:
@@ -73,7 +73,7 @@ predictions
     ##         559 c2.c6.c11.c16.c21.c22 c2.c6.c11.c16.c21.c22
     ##         560      c1.c4.c9.c14.c18      c1.c4.c9.c14.c18
 
-### Measure the Performance According to Various Hierarchical Performance/Loss Metrics::
+### Measure the Performance According to Various Hierarchical Performance/Loss Metrics
 
 ``` r
 # Hierarchical F-score:

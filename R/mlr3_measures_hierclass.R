@@ -72,12 +72,12 @@ MeasureClassifHierarchical = R6::R6Class("MeasureClassifHierarchical",
         #' @field fun (`function`) \cr
         #'   Function that implements the corresponding metric.    
         fun = NULL,
-        #' @field param_set (`ParamSet`) \¢r
+        #' @field param_set (`ParamSet`) \cr
         #'   ParamSet defining available hyperparameters. 
         param_set = NULL,
         #' @param fun (`function`) \cr
         #'   Function that implements the corresponding metric.
-        #' @param param_set (`ParamSet`) \¢r
+        #' @param param_set (`ParamSet`) \cr
         #'   ParamSet defining available hyperparameters. 
         initialize = function(fun, param_set = paradox::ps()) {
             super$initialize(

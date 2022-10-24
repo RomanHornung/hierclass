@@ -74,7 +74,7 @@ Florian Pfisterer
 \item{\code{fun}}{(`function`) \cr
 Function that implements the corresponding metric.}
 
-\item{\code{param_set}}{(`ParamSet`) \¢r
+\item{\code{param_set}}{(`ParamSet`) \cr
 ParamSet defining available hyperparameters.}
 }
 \if{html}{\out{</div>}}
@@ -111,7 +111,7 @@ ParamSet defining available hyperparameters.}
 \item{\code{fun}}{(`function`) \cr
 Function that implements the corresponding metric.}
 
-\item{\code{param_set}}{(`ParamSet`) \¢r
+\item{\code{param_set}}{(`ParamSet`) \cr
 ParamSet defining available hyperparameters.}
 }
 \if{html}{\out{</div>}}

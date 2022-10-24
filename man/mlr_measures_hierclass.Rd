@@ -5,7 +5,8 @@
 \alias{MeasureClassifHierarchical}
 \title{Hierarchical Performance/Loss Measures}
 \description{
-Collection of measures for hierarchical classification outcomes.
+Abstract version of measures for hierarchical classification outcomes.
+Can be used to implement hierarchical classification performance metrics by initializing with a `function` and `param_set`.
 }
 \examples{
 # Load the required packages:

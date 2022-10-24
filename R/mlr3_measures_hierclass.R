@@ -9,7 +9,8 @@
 #' @include spath.R
 #'
 #' @description
-#' Collection of measures for hierarchical classification outcomes.
+#' Abstract version of measures for hierarchical classification outcomes.
+#' Can be used to implement hierarchical classification performance metrics by initializing with a `function` and `param_set`.
 #'
 #' @seealso \code{\link{hierre}}, \code{\link{hierpr}}, \code{\link{hierfbeta}}, \code{\link{hloss}}, \code{\link{spath}}
 #' @export

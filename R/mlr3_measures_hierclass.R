@@ -9,7 +9,7 @@
 #' @include spath.R
 #'
 #' @description
-#' To Do Florian?
+#' Collection of measures for hierarchical classification outcomes.
 #'
 #' @seealso \code{\link{hierre}}, \code{\link{hierpr}}, \code{\link{hierfbeta}}, \code{\link{hloss}}, \code{\link{spath}}
 #' @export
@@ -68,8 +68,16 @@
 MeasureClassifHierarchical = R6::R6Class("MeasureClassifHierarchical",
     inherit = mlr3::MeasureClassif,
     public = list(
+        #' @field fun (`function`) \cr
+        #'   Function that implements the corresponding metric.    
         fun = NULL,
+        #' @field param_set (`ParamSet`) \¢r
+        #'   ParamSet defining available hyperparameters. 
         param_set = NULL,
+        #' @param fun (`function`) \cr
+        #'   Function that implements the corresponding metric.
+        #' @param param_set (`ParamSet`) \¢r
+        #'   ParamSet defining available hyperparameters. 
         initialize = function(fun, param_set = paradox::ps()) {
             super$initialize(
                 # custom id for the measure

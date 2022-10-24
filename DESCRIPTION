@@ -10,10 +10,9 @@ Description: Classification of hierarchically structured outcomes and
   implemented.
   The performance/loss measures implemented include the hierarchical F-score,
   the (weighted) shortest path distance, and the H-loss.
-  The package can be used in conjunction with the 'mlr3' R package. By loading
-  both packages, the top-down classification and the performance/loss measures
-  will be available to mlr3 as an mlr3 learner and as mlr3 measures, 
-  respectively.
+  The package can be used in conjunction with the 'mlr3' R package.
+  When using hierclass in conjunction with mlr3, the top-down classification and the performance/loss measures
+  will be available to mlr3 as an mlr3 learner and as mlr3 measures respectively.
 License: GPL-2
 Encoding: UTF-8
 RoxygenNote: 7.2.1

@@ -5,7 +5,7 @@
 \alias{MeasureClassifHierarchical}
 \title{Hierarchical Performance/Loss Measures}
 \description{
-To Do Florian?
+Collection of measures for hierarchical classification outcomes.
 }
 \examples{
 # Load the required packages:
@@ -67,6 +67,17 @@ Florian Pfisterer
 \section{Super classes}{
 \code{\link[mlr3:Measure]{mlr3::Measure}} -> \code{\link[mlr3:MeasureClassif]{mlr3::MeasureClassif}} -> \code{MeasureClassifHierarchical}
 }
+\section{Public fields}{
+\if{html}{\out{<div class="r6-fields">}}
+\describe{
+\item{\code{fun}}{(`function`) \cr
+Function that implements the corresponding metric.}
+
+\item{\code{param_set}}{(`ParamSet`) \¢r
+ParamSet defining available hyperparameters.}
+}
+\if{html}{\out{</div>}}
+}
 \section{Methods}{
 \subsection{Public methods}{
 \itemize{
@@ -93,6 +104,17 @@ Florian Pfisterer
 \if{html}{\out{<div class="r">}}\preformatted{MeasureClassifHierarchical$new(fun, param_set = paradox::ps())}\if{html}{\out{</div>}}
 }
 
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{fun}}{(`function`) \cr
+Function that implements the corresponding metric.}
+
+\item{\code{param_set}}{(`ParamSet`) \¢r
+ParamSet defining available hyperparameters.}
+}
+\if{html}{\out{</div>}}
+}
 }
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-MeasureClassifHierarchical-clone"></a>}}

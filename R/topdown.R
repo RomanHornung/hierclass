@@ -160,11 +160,11 @@ topdown <- function(formula, data, dependent.variable.name, num.trees=500,
   # coorresponds to a specific level of the hierarchy (used lateron for determening
   # the direct descendants of the internal nodes):
 
-  ylist <- sapply(yun, function(x) strsplit(x, split="\\.")[[1]])
+  ylist <- lapply(yun, function(x) strsplit(x, split="\\.")[[1]])
 
   # all classes and sub classes, used to assign the
   # appropriate class levels to the predictions performed by predict.topdown:
-  allclasses <- unique(unlist(sapply(ylist, function(x) sapply(1:length(x), function(y) paste(x[1:y], collapse=".")))))
+  allclasses <- unique(unlist(lapply(ylist, function(x) lapply(1:length(x), function(y) paste(x[1:y], collapse=".")))))
 
   mdepth <- max(sapply(ylist, length))
 
@@ -209,7 +209,7 @@ topdown <- function(formula, data, dependent.variable.name, num.trees=500,
   # Add to the data set new columns, where each corresponds to one of the classification
   # problems in the category tree (these will be used by ranger lateron):
 
-  yall <- sapply(as.character(response), function(x) strsplit(x, split="\\.")[[1]])
+  yall <- lapply(as.character(response), function(x) strsplit(x, split="\\.")[[1]])
 
   for(i in seq(along=modellist)) {
 

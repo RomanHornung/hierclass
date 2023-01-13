@@ -157,14 +157,17 @@ topdown <- function(formula, data, dependent.variable.name, num.trees=500,
 
 
   # Make a matrix which contains the class hierarchy, where each column
-  # coorresponds to a specific level of the hierarchy (used lateron for determening
+  # corresponds to a specific level of the hierarchy (used lateron for determening
   # the direct descendants of the internal nodes):
 
   ylist <- lapply(yun, function(x) strsplit(x, split="\\.")[[1]])
 
   # all classes and sub classes, used to assign the
   # appropriate class levels to the predictions performed by predict.topdown:
-  allclasses <- unique(unlist(lapply(ylist, function(x) lapply(1:length(x), function(y) paste(x[1:y], collapse=".")))))
+  if (class(response)=="factor")
+    allclasses <- unique(unlist(lapply(lapply(levels(response), function(x) strsplit(x, split="\\.")[[1]]), function(x) lapply(1:length(x), function(y) paste(x[1:y], collapse=".")))))
+  else
+    allclasses <- unique(unlist(lapply(ylist, function(x) lapply(1:length(x), function(y) paste(x[1:y], collapse=".")))))
 
   mdepth <- max(sapply(ylist, length))
 

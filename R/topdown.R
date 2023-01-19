@@ -197,7 +197,9 @@ topdown <- function(formula, data, dependent.variable.name, num.trees=500,
 
     indtemp <- which(apply(ymat, 2, function(x) yclasses[i] %in% x))
 
-    if(sum(ymat[,indtemp]==yclasses[i], na.rm=TRUE) > 1)
+    # CHANGE ROMAN:
+    #!# if(sum(ymat[,indtemp]==yclasses[i], na.rm=TRUE) > 1)
+    if (indtemp < ncol(ymat))
       modellist[[i+1]]$subclasses <- unique(ymat[,indtemp+1][!is.na(ymat[,indtemp]) & ymat[,indtemp]==yclasses[i]])
     else
       modellist[[i+1]]$subclasses <- NA
